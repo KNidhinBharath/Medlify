@@ -3,11 +3,29 @@ import Grid from '@mui/material/Grid';
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box"
 import heroimage from "../../Assets/hero_image.png"
+import SearchBar from "./SearchBar";
+import Doctorimg from "../../Assets/Doctor.png"
+import Labs from "../../Assets/Drugstore.png"
+import Hospitals from "../../Assets/Hospital.png"
+import Store from "../../Assets/Capsule.png"
+import Ambulance from "../../Assets/Ambulance.png"
+import { useMemo } from "react";
+import IconCard from "../IconCard/IconCard";
+import '../../Styles/Hero.css'
 
 export default function Hero() {
 
+    const Services = useMemo( () => [
+      { img: Doctorimg, title: "Doctors" },
+      { img: Labs, title: "Labs" },
+      { img: Hospitals, title: "Hospitals", active: true },
+      { img: Store, title: "Medical Store" },
+      { img: Ambulance, title: "Ambulance" },
+])
+
+
     return(
-        <div className="Hero" >
+        <Box className="Hero" >
                 <Grid container spacing={2} 
                     sx={{
                         display:"flex",
@@ -15,6 +33,7 @@ export default function Hero() {
                         justifyContent:"center",
                         objectFit:"contain"
                        }}>
+
                     <Grid item xs={6} className = "hero-txt"
                         sx={{  
                             position:"relative",
@@ -23,15 +42,18 @@ export default function Hero() {
                             flexDirection:"column",
                             alignItems:"flex-start"
                             }}>
+
                         <Stack direction={{xs:"column"}}>
+
                             <Typography 
                              sx={{
                                   fontSize:"31px" ,
                                   display:"flex"                        
                                 }}
-                            >Skip the travel! Find Online </Typography>
+                            >Skip the travel! Find Online 
+                            </Typography>
 
-                                <Typography component="div"
+                                <Typography component="Box"
                                     sx={{
                                         display:"flex",
                                         columnGap:1,
@@ -81,7 +103,7 @@ export default function Hero() {
 
                     <Grid item xs={6} className = "hero-img"
                         sx={{
-
+                            display:"flex"
                             
                         }}>
                             <img src={heroimage}
@@ -90,7 +112,7 @@ export default function Hero() {
                                 width:"643px",
                                 height:"auto",
                                 objectFit:"contain"
-                             }}
+                                }}
                              
                              ></img>
 
@@ -98,6 +120,50 @@ export default function Hero() {
 
                 </Grid>
 
-            </div>
+                <Box className= "SearchCategory"
+                    sx={{
+                        padding:"2rem",
+                        position :"relative",
+                        top:"-290px",
+                        right:"30px",
+                        backgroundColor:"#F0F0F0"
+                        
+                    }}>
+                            <SearchBar/>        
+
+                    <Typography
+                        component="h4"
+                        fontSize={20}
+                        color="#102851"
+                        fontWeight={500}
+                        textAlign="center"
+                        m={2}
+                >
+                        You may be looking for
+                    </Typography>
+                
+                    <Grid
+                        container
+                        columnSpacing={{ xs: 1, md: 2 }}
+                        gap={10}
+                        justifyContent={"center"}
+                        >
+                        
+
+                    {
+                        Services.map((item) => (
+                        <Grid item key={item.title} xs={4} md={2.4}>
+                            <IconCard
+                                img = {item.img}
+                                title = {item.title}
+                                active = {item.active || false}
+                                bgColor = "#FAFBFE"
+                            />
+                        </Grid>))
+                    }
+                    </Grid>                     
+                </Box>
+
+            </Box>
     )
 }
