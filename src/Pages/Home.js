@@ -4,6 +4,8 @@ import Navbar from "../Components/Navbar/Navbar";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Offers from "../Components/Offers/Offers";
+import Specialization from "../Components/Specialization/Specialization";
+import Specialists from "../Components/Specialists/Specialists";
 
 export default function Home() {
 
@@ -21,6 +23,9 @@ export default function Home() {
                 <Hero/>
             </Container>
             <Offers/>
+            <Specialization/>
+            <Specialists/>
+
             
             
             

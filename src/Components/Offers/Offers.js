@@ -9,14 +9,21 @@ import 'swiper/css';
 
 export default function Offers() {
     return (
-        <Box py={6}>
-            <Container maxWidth="xl">
+        <Box >
+            <Container maxWidth="xl" sx={{
+                maxWidth:"90%",
+                "& .swiper-pagination": {
+                    position: "relative !important",
+                    marginTop: "10px",
+                }
+            }}>
                 <Swiper 
                     slidesPerView={1}
                     spaceBetween={30}
                     modules={[Pagination]}
                     pagination ={{
                         clickable: true
+                        
                     }}
                     breakpoints={
                         {

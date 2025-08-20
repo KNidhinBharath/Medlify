@@ -25,13 +25,16 @@ export default function Hero() {
 
 
     return(
-        <Box className="Hero" >
+        <Box className="Hero" sx={{
+            maxHeight:"120vh"
+            
+        }} >
                 <Grid container spacing={2} 
                     sx={{
                         display:"flex",
                         flexDirection:"row",
                         justifyContent:"center",
-                        objectFit:"contain"
+                        
                        }}>
 
                     <Grid item xs={6} className = "hero-txt"
@@ -122,12 +125,13 @@ export default function Hero() {
 
                 <Box className= "SearchCategory"
                     sx={{
-                        padding:"2rem",
+                        pt:2,
                         position :"relative",
                         top:"-290px",
                         right:"30px",
-                        backgroundColor:"#F0F0F0"
-                        
+                        backgroundColor:"#F0F0F0",
+                       
+                                                
                     }}>
                             <SearchBar/>        
 
@@ -137,7 +141,7 @@ export default function Hero() {
                         color="#102851"
                         fontWeight={500}
                         textAlign="center"
-                        m={2}
+                        m={4}
                 >
                         You may be looking for
                     </Typography>
@@ -147,13 +151,15 @@ export default function Hero() {
                         columnSpacing={{ xs: 1, md: 2 }}
                         gap={10}
                         justifyContent={"center"}
+                        
                         >
                         
 
                     {
                         Services.map((item) => (
                         <Grid item key={item.title} xs={4} md={2.4}>
-                            <IconCard
+                            <IconCard 
+                                
                                 img = {item.img}
                                 title = {item.title}
                                 active = {item.active || false}
