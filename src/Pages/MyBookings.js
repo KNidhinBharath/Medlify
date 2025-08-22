@@ -41,15 +41,15 @@ export default function MyBookings() {
               spacing={{ xs: 0, md: 12 }}
               alignItems={{ xs: "center", md: "flex-end" }}
             >
-              <h1 style={{color:"#fff"}}
-                
-                // pb={1}
-                // fontSize={{ xs: 32, md: 40 }}
-                // fontWeight={700}
-                // color="#fff"
+              <Typography
+                component="h1"
+                pb={1}
+                fontSize={{ xs: 32, md: 40 }}
+                fontWeight={700}
+                color="#fff"
               >
                 My Bookings
-              </h1>
+              </Typography>
               <Box
                 bgcolor="#fff"
                 p={3}
