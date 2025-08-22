@@ -40,7 +40,7 @@ export default function NavBar() {
             <Link>Surgeries</Link>
             <Link>Software for Provider</Link>
             <Link>Facilities</Link>
-            <Link to="/mybookings">
+            <Link to="/my-bookings">
               <Button variant="contained" sx={{backgroundColor:"#2AA7FF", borderRadius:"8px"}} disableElevation>
                 My Bookings
               </Button>

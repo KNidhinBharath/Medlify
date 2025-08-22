@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import cta from "../Assets/cta.png";
 import SearchBar from "../Components/Hero/SearchBar";
 import NavBar from "../Components/Navbar/Navbar";
+import Motto from "../Components/Motto";
 
 export default function MyBookings() {
   const [bookings, setBookings] = useState([]);
@@ -21,6 +22,7 @@ export default function MyBookings() {
 
   return (
     <>
+      <Motto/>
       <NavBar />
       <Box
         sx={{ background: "linear-gradient(#EFF5FE, rgba(241,247,255,0.47))" }}
