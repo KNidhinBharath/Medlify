@@ -29,7 +29,7 @@ export default function HospitalCard({
         />
         <Box flex={1}>
           <Typography
-            component="h1" variant="h3"
+            component="h3" 
             color="#2AA7FF"
             fontWeight={600}
             fontSize={{ xs: 18, md: 20 }}
