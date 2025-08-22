@@ -147,6 +147,7 @@ export default function SearchBar() {
 
                            <Button 
                                 type="submit"
+                                id="searchBtn"
                                 variant="contained" 
                                 startIcon ={<SearchIcon/>}
                                 size="large"
