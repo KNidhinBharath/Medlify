@@ -7,7 +7,7 @@ import Select from "@mui/material/Select";
 import { useEffect, useState } from "react";
 import axios from "axios"
 import MenuItem from "@mui/material/MenuItem";
-import {Navigate, useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 
 
 
@@ -16,6 +16,7 @@ export default function SearchBar() {
     const [formData,setFormData] = useState({state:"",city:""})
     const [states,setStates] = useState([])
     const [cities,setCities] = useState([])
+    const navigate = useNavigate()
     
     
 
@@ -24,7 +25,7 @@ export default function SearchBar() {
             try {
                 const statesData = await axios.get("https://meddata-backend.onrender.com/states")
                 setStates(statesData.data)
-                console.log(statesData.data)
+                
             } catch (error) {
                 console.error("Api not Found")
             }
@@ -39,7 +40,7 @@ export default function SearchBar() {
             try {
                 const citiesData = await axios.get(`https://meddata-backend.onrender.com/cities/${formData.state}`)
                 setCities(citiesData.data)
-                console.log(citiesData.data)
+                
             }
 
             catch(error) {
@@ -59,7 +60,7 @@ export default function SearchBar() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(formData.city && formData.state) {
-            Navigate(`/search?state=${formData.state}&city=${formData.city}`)
+            navigate(`/search?state=${formData.state}&city=${formData.city}`)
         }
 
     }
@@ -145,6 +146,7 @@ export default function SearchBar() {
                         </Select>
 
                            <Button 
+                                type="submit"
                                 variant="contained" 
                                 startIcon ={<SearchIcon/>}
                                 size="large"

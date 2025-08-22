@@ -6,18 +6,19 @@ import Typography from "@mui/material/Typography";
 import Offers from "../Components/Offers/Offers";
 import Specialization from "../Components/Specialization/Specialization";
 import Specialists from "../Components/Specialists/Specialists";
+import PatientCaring from "../Components/PatientCaring/PatientCaring";
+import Blogs from "../Components/Blogs/Blogs";
+import OurFamilies from "../Components/OurFamilies/OurFamilies";
+import FAQs from "../Components/FAQs/FAQs";
+import DownloadApp from "../Components/DownloadApp/DownloadApp";
+import Footer from "../Components/Footer/Footer";
+import Motto from "../Components/Motto";
 
 export default function Home() {
 
     return(
         <Box className="Home">
-            <Box className='motto'>
-                <Typography variant="h6" sx={{
-                    fontSize:"1rem",
-                    fontWeight:"400"
-                }}> The health and well-being of our patients and their health care team will always be our priority, 
-                    so we follow the best practices for cleanliness.</Typography>
-            </Box>
+            <Motto/>
             <Container>
                 <Navbar/>
                 <Hero/>
@@ -25,7 +26,12 @@ export default function Home() {
             <Offers/>
             <Specialization/>
             <Specialists/>
-
+            <PatientCaring/>
+            <Blogs/>
+            <OurFamilies/>
+            <FAQs/>
+            <DownloadApp/>
+            <Footer/>
             
             
             

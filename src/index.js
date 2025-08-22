@@ -4,11 +4,40 @@ import './index.css';
 import App from './App';
 import 'typeface-poppins';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import SearchPage from './Pages/SearchPage';
+import MyBookings from './Pages/MyBookings';
+import Home from './Pages/Home';
+
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element: <App />,
+    children: [
+      {
+        path:"search",
+        element: <SearchPage />
+      },
+
+      {
+        path:"mybookings",
+        element: <MyBookings />
+      },
+
+      {
+        path:"/",
+        element: <Home />
+      }
+     ]
+   }
+ ]
+  
+)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
