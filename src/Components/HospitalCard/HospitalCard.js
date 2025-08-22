@@ -29,12 +29,12 @@ export default function HospitalCard({
         />
         <Box flex={1}>
           <Typography
-            variant="h3"
+            variant="h1"
             color="#2AA7FF"
             fontWeight={600}
             fontSize={{ xs: 18, md: 20 }}
             mb={1}
-           
+            textTransform="capitalize"
             lineHeight={1}
           >
             {details["Hospital Name"].toLowerCase()}
