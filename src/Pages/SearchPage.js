@@ -88,7 +88,7 @@ export default function SearchPage() {
                 {hospitals.length > 0 && (
                   <Box  sx={{ mb: 3 , backgroundColor:"#fff" , top:"100px"}}>
                     <Typography
-                      variant="h1"
+                      component="h1"
                       fontSize={24}
                       lineHeight={1.1}
                       mb={2}
